@@ -27,7 +27,7 @@ public class GeoLocService {
 		GeoLocationDto dto;
 		dto = geoDao.findLastGeoByIp(ip);
 		if(dto != null) {
-			if(dto.getTimestamp().after(new Date(System.currentTimeMillis() - 60000))) {
+			if(dto.getTimestamp().after(new Date(System.currentTimeMillis() - 300000))) {
 				System.out.println("Possible refresh page");
 				return null;
 			}
